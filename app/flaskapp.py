@@ -37,8 +37,8 @@ def catch_all(path):
 
 	if request_domain in redirect_config:
 		final_target = redirect_config[request_domain]
-		print('Request by ' + requestor_ip + ' for ' + request_domain + ' redirected to ' + final_target)
+		print('Request by ' + requestor_ip + ' for ' + request_domain + ' redirected to ' + final_target, flush=True)
 	else:
-		print('Request by ' + requestor_ip + ' for ' + request_domain + ' redirected to default URL ' + final_target)
+		print('Request by ' + requestor_ip + ' for ' + request_domain + ' redirected to default URL ' + final_target, flush=True)
 
 	return redirect(final_target, 301)

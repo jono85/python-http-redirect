@@ -22,5 +22,8 @@ ENV REDIRECT_CONFIG='{"some.domain.com":"https://redirected.address.com/"}'
 
 WORKDIR /app
 
-#ENTRYPOINT /bin/bash
+#expose default ports, for others the docker container must be launched with the parameter to expose/publish them
+EXPOSE 80
+EXPOSE 443
+
 ENTRYPOINT /app/entrypoint.sh
