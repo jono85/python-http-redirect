@@ -33,7 +33,12 @@ def catch_all(path):
 	request_domain = request.host
 	final_target = default_redirect
 
+	#get direct IP
 	requestor_ip = request.remote_addr
+	real_ip_header_name = os.getenv('REAL_IP_HEADER_NAME')
+	#if we have a header name set for getting proxied IP, use it..
+	if real_ip_header_name != 'not-set':
+		requestor_ip = request.headers.get(real_ip_header_name)
 
 	if request_domain in redirect_config:
 		final_target = redirect_config[request_domain]

@@ -17,6 +17,7 @@ ENV THREADS_COUNT=2
 ENV REQUEST_TIMEOUT=30
 ENV SERVER_PORT=80
 ENV USE_SELF_SIGNED_SSL='false'
+ENV REAL_IP_HEADER_NAME='not-set'
 ENV DEFAULT_REDIRECT='https://www.google.com/'
 ENV REDIRECT_CONFIG='{"some.domain.com":"https://redirected.address.com/"}'
 

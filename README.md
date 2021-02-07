@@ -12,5 +12,6 @@ Configuration is done through environmental variables, details in the table belo
 | REQUEST_TIMEOUT | 30 | request timeout after which the Gunicorn server will respond with an error to the request. Likely will never happen. |
 | SERVER_PORT | 80 | TCP port the container will be listening on |
 | USE_SELF_SIGNED_SSL | false | change to 'true' if you want the server to listen for HTTPS using a self signed cert that will be generated upon boot. |
+| REAL_IP_HEADER_NAME | not-set | if the value is different from default 'not-set', the server will look for that header to read the original source IP of a request (this is for reverse-proxy scenarios, i.e. behind nginx reverse proxy with 'X-Real-Ip') |
 | DEFAULT_REDIRECT | https://www.google.com/ | Any requests to a domain that's not configured will be redirected here. |
 | REDIRECT_CONFIG | { "some.domain.com": "https://redirected.address.com/" } | a single json string containing Key:Value pairs - Key is the domain of the request, Value is the URL the request will be redirected to. |
